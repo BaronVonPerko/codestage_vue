@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav>
+        <nav class="shadow-sm p-4">
             TODO: navbar goes here
         </nav>
 
