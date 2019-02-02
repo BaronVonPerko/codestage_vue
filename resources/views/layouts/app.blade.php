@@ -22,18 +22,23 @@
 <body>
 <div id="app">
     <nav class="shadow-sm p-4">
-        TODO: navbar goes here
+        <div class="container mx-auto flex justify-between align-center">
 
-        @if(\Illuminate\Support\Facades\Auth::check())
-            <a href="{{ route('logout') }}">Logout</a>
-        @endif
+            <h3>{{config('app.name', 'Code Stage')}}</h3>
+            <div>
+                @if(\Illuminate\Support\Facades\Auth::check())
+                    <a href="{{ route('logout') }}">Logout</a>
+                @endif
 
-        @if(\Illuminate\Support\Facades\Auth::guest())
-            <a href="{{ route('login') }}">Login</a>
-        @endif
+                @if(\Illuminate\Support\Facades\Auth::guest())
+                    <a href="{{ route('login') }}">Login</a>
+                @endif
+            </div>
+        </div>
+
     </nav>
 
-    <main class="py-4">
+    <main class="py-4 container mx-auto">
         @yield('content')
     </main>
 </div>
