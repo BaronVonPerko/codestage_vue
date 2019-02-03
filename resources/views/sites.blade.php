@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="container">
-    Sites Page
+    <sites-page></sites-page>
 </div>
 @endsection
