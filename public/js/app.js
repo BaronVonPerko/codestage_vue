@@ -1826,9 +1826,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["siteCount"],
   data: function data() {
     return {
-      pageRouter: new _components_pageRouting_PageRouter__WEBPACK_IMPORTED_MODULE_0__["PageRouter"]([new _components_pageRouting_PageRouter__WEBPACK_IMPORTED_MODULE_0__["PageRoute"]("sites", "My Sites", _subpages_MySites__WEBPACK_IMPORTED_MODULE_1__["default"]), new _components_pageRouting_PageRouter__WEBPACK_IMPORTED_MODULE_0__["PageRoute"]("create", "Create New Site", _subpages_CreateSite__WEBPACK_IMPORTED_MODULE_2__["default"])])
+      pageRouter: new _components_pageRouting_PageRouter__WEBPACK_IMPORTED_MODULE_0__["PageRouter"]([new _components_pageRouting_PageRouter__WEBPACK_IMPORTED_MODULE_0__["PageRoute"]("sites", "My Sites", _subpages_MySites__WEBPACK_IMPORTED_MODULE_1__["default"]), new _components_pageRouting_PageRouter__WEBPACK_IMPORTED_MODULE_0__["PageRoute"]("create", "Create New Site", _subpages_CreateSite__WEBPACK_IMPORTED_MODULE_2__["default"])], this.siteCount > 0 ? 0 : 1 // if no sites have been created, start on the CreateSite subpage
+      )
     };
   }
 });
@@ -48322,10 +48324,12 @@ var PageRouter =
 /*#__PURE__*/
 function () {
   function PageRouter(pageRoutes) {
+    var defaultIndex = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
     _classCallCheck(this, PageRouter);
 
     this.pageRoutes = pageRoutes;
-    this.pageRoutes[0].isActive = true;
+    this.pageRoutes[defaultIndex].isActive = true;
   }
 
   _createClass(PageRouter, [{

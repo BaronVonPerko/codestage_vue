@@ -8,6 +8,6 @@ class SitesPageController extends Controller
 {
     public function __invoke()
     {
-        return view('sites');
+        return view('sites', ['siteCount' => 0]);
     }
 }

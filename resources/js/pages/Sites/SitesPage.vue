@@ -15,12 +15,17 @@ import MySites from "./subpages/MySites";
 import CreateSite from "./subpages/CreateSite";
 
 export default {
+  props: ["siteCount"],
+
   data() {
     return {
-      pageRouter: new PageRouter([
-        new PageRoute("sites", "My Sites", MySites),
-        new PageRoute("create", "Create New Site", CreateSite)
-      ])
+      pageRouter: new PageRouter(
+        [
+          new PageRoute("sites", "My Sites", MySites),
+          new PageRoute("create", "Create New Site", CreateSite)
+        ],
+        this.siteCount > 0 ? 0 : 1 // if no sites have been created, start on the CreateSite subpage
+      )
     };
   }
 };

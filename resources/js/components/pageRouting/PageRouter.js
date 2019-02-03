@@ -1,14 +1,14 @@
-export class PageRouter {   
-    constructor(pageRoutes) {
+export class PageRouter {
+    constructor(pageRoutes, defaultIndex = 0) {
         this.pageRoutes = pageRoutes;
 
-        this.pageRoutes[0].isActive = true;
+        this.pageRoutes[defaultIndex].isActive = true;
     }
 
     showPage(page) {
-      this.pageRoutes.forEach(route => {
-        route.isActive = route.key === page.key;
-      });
+        this.pageRoutes.forEach(route => {
+            route.isActive = route.key === page.key;
+        });
     }
 
     renderActive() {

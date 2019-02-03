@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="container">
-    <sites-page></sites-page>
+    <sites-page site-count="{{$siteCount}}"></sites-page>
 </div>
 @endsection
