@@ -3,7 +3,6 @@ export class PageRouter {
         this.pageRoutes = pageRoutes;
 
         this.pageRoutes[0].isActive = true;
-        this.activeRoute = this.pageRoutes[0];
     }
 
     showPage(page) {
@@ -12,15 +11,16 @@ export class PageRouter {
       });
     }
 
-    isCurrent(key) {
-        return this.pageRoutes.find(route => route.key === key).isActive;
+    renderActive() {
+        return this.pageRoutes.find(route => route.isActive).component;
     }
 }
 
 export class PageRoute {
-    constructor(key, label) {
+    constructor(key, label, component) {
         this.key = key;
         this.label = label;
+        this.component = component;
         this.isActive = false;
     }
 }

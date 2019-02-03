@@ -1,23 +1,25 @@
 <template>
   <div>
     <page-links :page-router="this.pageRouter"></page-links>
-
-    <div class="py-32">
-      <my-sites v-if="this.pageRouter.isCurrent('sites')"></my-sites>
-      <create-site v-if="this.pageRouter.isCurrent('create')"></create-site>
-    </div>
+    <page-router-view :page-router="this.pageRouter"></page-router-view>
   </div>
 </template>
 
 <script>
-import { PageRouter, PageRoute } from "./../../components/PageRouter";
+import {
+  PageRouter,
+  PageRoute
+} from "./../../components/pageRouting/PageRouter";
+
+import MySites from "./subpages/MySites";
+import CreateSite from "./subpages/CreateSite";
 
 export default {
   data() {
     return {
       pageRouter: new PageRouter([
-        new PageRoute("sites", "My Sites"),
-        new PageRoute("create", "Create New Site")
+        new PageRoute("sites", "My Sites", MySites),
+        new PageRoute("create", "Create New Site", CreateSite)
       ])
     };
   }
