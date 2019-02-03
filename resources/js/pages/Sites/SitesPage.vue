@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="flex">
-      <a class="mr-4" :class="styleSitesLink" @click="showSites()" href="#">My Sites</a>
-      <a class="mr-4" :class="styleCreateLink" @click="showCreate()" href="#">Create New Site</a>
+      <a class="mr-4" :class="styleSitesLink" @click="showPage(routes.sites)" href="#">My Sites</a>
+      <a class="mr-4" :class="styleCreateLink" @click="showPage(routes.create)" href="#">Create New Site</a>
     </div>
 
     <div class="py-32" v-if="this.route === this.routes.sites">
@@ -39,11 +39,8 @@ export default {
   },
 
   methods: {
-    showCreate() {
-      this.route = routes.create;
-    },
-    showSites() {
-      this.route = routes.sites;
+    showPage(page) {
+      this.route = page;
     }
   }
 };

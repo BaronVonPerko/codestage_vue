@@ -1800,11 +1800,8 @@ var routes = {
     }
   },
   methods: {
-    showCreate: function showCreate() {
-      this.route = routes.create;
-    },
-    showSites: function showSites() {
-      this.route = routes.sites;
+    showPage: function showPage(page) {
+      this.route = page;
     }
   }
 });
@@ -36725,7 +36722,7 @@ var render = function() {
           attrs: { href: "#" },
           on: {
             click: function($event) {
-              _vm.showSites()
+              _vm.showPage(_vm.routes.sites)
             }
           }
         },
@@ -36740,7 +36737,7 @@ var render = function() {
           attrs: { href: "#" },
           on: {
             click: function($event) {
-              _vm.showCreate()
+              _vm.showPage(_vm.routes.create)
             }
           }
         },
