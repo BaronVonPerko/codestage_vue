@@ -29,6 +29,12 @@
     <main class="py-4 container mx-auto">
         @yield('content')
     </main>
+
+    <footer class="py-32 bg-grey-light">
+        <div class="text-center text-grey-darker">
+            &copy; <?= date('Y') ?> Code Stage
+        </div>
+    </footer>
 </div>
 </body>
 </html>

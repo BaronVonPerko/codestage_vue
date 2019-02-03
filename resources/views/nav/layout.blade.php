@@ -2,7 +2,9 @@
     <div class="container mx-auto flex justify-between align-center">
 
         <div class="flex align-center">
-            <h3 class="text-2xl">{{config('app.name', 'Code Stage')}}</h3>
+            <a href="/">
+                <h3 class="text-grey-darkest text-2xl">{{config('app.name', 'Code Stage')}}</h3>
+            </a>
 
             @if(\Illuminate\Support\Facades\Auth::check())
                 <div class="ml-8">
