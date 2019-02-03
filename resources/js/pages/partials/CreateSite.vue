@@ -1,0 +1,3 @@
+<template>
+  <h1>Create New Site</h1>
+</template>
