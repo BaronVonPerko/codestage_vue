@@ -19,3 +19,4 @@ Auth::routes();
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/sites', 'SitesPageController')->name('sites')->middleware('auth');
+Route::get('/settings', 'SettingsPageController')->name('settings')->middleware('auth');
