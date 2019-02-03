@@ -1791,6 +1791,14 @@ var routes = {
       routes: routes
     };
   },
+  computed: {
+    styleSitesLink: function styleSitesLink() {
+      return this.route === this.routes.sites ? "border-b-4" : "";
+    },
+    styleCreateLink: function styleCreateLink() {
+      return this.route === this.routes.create ? "border-b-4" : "";
+    }
+  },
   methods: {
     showCreate: function showCreate() {
       this.route = routes.create;
@@ -36713,6 +36721,7 @@ var render = function() {
         "a",
         {
           staticClass: "mr-4",
+          class: _vm.styleSitesLink,
           attrs: { href: "#" },
           on: {
             click: function($event) {
@@ -36727,6 +36736,7 @@ var render = function() {
         "a",
         {
           staticClass: "mr-4",
+          class: _vm.styleCreateLink,
           attrs: { href: "#" },
           on: {
             click: function($event) {

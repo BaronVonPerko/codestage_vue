@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="flex">
-      <a class="mr-4" @click="showSites()" href="#">My Sites</a>
-      <a class="mr-4" @click="showCreate()" href="#">Create New Site</a>
+      <a class="mr-4" :class="styleSitesLink" @click="showSites()" href="#">My Sites</a>
+      <a class="mr-4" :class="styleCreateLink" @click="showCreate()" href="#">Create New Site</a>
     </div>
 
     <div class="py-32" v-if="this.route === this.routes.sites">
@@ -27,6 +27,15 @@ export default {
       route: routes.sites,
       routes
     };
+  },
+
+  computed: {
+    styleSitesLink() {
+      return this.route === this.routes.sites ? "border-b-4" : "";
+    },
+    styleCreateLink() {
+      return this.route === this.routes.create ? "border-b-4" : "";
+    }
   },
 
   methods: {
