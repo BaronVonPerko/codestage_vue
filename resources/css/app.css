@@ -7,3 +7,7 @@
 * {
     @apply .font-sans;
 }
+
+a {
+    @apply .no-underline .text-grey-darker .text-lg
+}

@@ -23,23 +23,8 @@
 </head>
 <body>
 <div id="app">
-    <nav class="shadow-sm p-4">
-        <div class="container mx-auto flex justify-between align-center">
 
-            <h3>{{config('app.name', 'Code Stage')}}</h3>
-            <div>
-                @if(\Illuminate\Support\Facades\Auth::check())
-                    <a href="{{ route('logout') }}">Logout</a>
-                @endif
-
-                @if(\Illuminate\Support\Facades\Auth::guest())
-                    <a href="{{ route('login') }}">Login</a>
-                    <a href="{{ route('register') }}">Register</a>
-                @endif
-            </div>
-        </div>
-
-    </nav>
+    @include('nav.layout')
 
     <main class="py-4 container mx-auto">
         @yield('content')
