@@ -1,47 +1,25 @@
 <template>
   <div>
-    <page-links :routes="this.routes" :onRouteClick="showPage"></page-links>
+    <page-links :page-router="this.pageRouter"></page-links>
 
-    <div class="py-32" v-if="this.route.id === 'sites'">
-      <my-sites></my-sites>
-    </div>
-
-    <div class="py-32" v-if="this.route.id === 'create'">
-      <create-site></create-site>
+    <div class="py-32">
+      <my-sites v-if="this.pageRouter.isCurrent('sites')"></my-sites>
+      <create-site v-if="this.pageRouter.isCurrent('create')"></create-site>
     </div>
   </div>
 </template>
 
 <script>
-const routes = [
-  { id: "sites", label: "My Sites", isActive: true },
-  { id: "create", label: "Create New Site" }
-];
+import { PageRouter, PageRoute } from "./../../components/PageRouter";
 
 export default {
   data() {
     return {
-      route: routes[0],
-      routes
+      pageRouter: new PageRouter([
+        new PageRoute("sites", "My Sites"),
+        new PageRoute("create", "Create New Site")
+      ])
     };
-  },
-
-  computed: {
-    styleSitesLink() {
-      return this.route.id === "sites" ? "border-b-4" : "";
-    },
-    styleCreateLink() {
-      return this.route.id === "create" ? "border-b-4" : "";
-    }
-  },
-
-  methods: {
-    showPage(pageId) {
-      this.route = routes.find(route => route.id === pageId);
-      routes.forEach(route => {
-          route.isActive = route.id === pageId;
-      });
-    }
   }
 };
 </script>
