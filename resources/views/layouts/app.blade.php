@@ -32,7 +32,7 @@
 
     <footer class="py-32 bg-grey-light">
         <div class="text-center text-grey-darker">
-            &copy; <?= date('Y') ?> Code Stage
+            &copy; <?= date('Y') ?> {{ config('app.name', 'Code Stage') }}
         </div>
     </footer>
 </div>
