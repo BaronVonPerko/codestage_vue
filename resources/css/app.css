@@ -11,3 +11,7 @@
 a {
     @apply .no-underline .text-grey-darker .text-lg
 }
+
+.transition {
+    transition: all 200ms ease-in-out;
+}

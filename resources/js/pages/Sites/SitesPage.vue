@@ -15,7 +15,9 @@ import MySites from "./subpages/MySites";
 import CreateSite from "./subpages/CreateSite";
 
 export default {
-  props: ["siteCount"],
+  props: {
+    siteCount: Number
+  },
 
   data() {
     return {

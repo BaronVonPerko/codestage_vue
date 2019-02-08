@@ -6,6 +6,8 @@
 
 <script>
 export default {
-  props: ["pageRouter"]
+  props: {
+    pageRouter: Object
+  }
 };
 </script>
