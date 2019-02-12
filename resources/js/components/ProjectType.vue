@@ -1,15 +1,19 @@
 <template>
-    <div
-      @click="select()"
-      :class="this.classes"
-      class="shadow p-8 text-grey-darkest flex flex-col justify-between bg-no-repeat bg-center bg-cover"
-    >
-      <div>
-        <h3 class="text-3xl mb-2">{{this.title}}</h3>
-        <h4 class="text-xl mb-4">{{this.subTitle}}</h4>
-      </div>
-      <p v-if="this.comingSoon">Coming Soon...</p>
+  <div
+    @click="select()"
+    :class="this.classes"
+    class="shadow p-8 text-grey-darkest bg-no-repeat bg-center bg-cover flex-1"
+  >
+    <div class="w-full mb-6">
+      <img :src="this.logoUrl" class="w-16">
     </div>
+
+    <div>
+      <h3 class="text-3xl mb-2">{{this.title}}</h3>
+      <h4 class="text-xl mb-4">{{this.subTitle}}</h4>
+    </div>
+    <p v-if="this.comingSoon">Coming Soon...</p>
+  </div>
 </template>
 
 
@@ -48,6 +52,8 @@ export default {
     select() {
       if (!this.comingSoon) {
         this.isSelected = !this.isSelected;
+
+        this.$emit("selected", this.isSelected ? this : null);
       }
     }
   }
